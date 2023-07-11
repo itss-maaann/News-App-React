@@ -90,7 +90,9 @@ class News extends Component {
 
         return (
             <>
+            <div className="container mt-3">
                 <h2 className="text-center">{category !== '' ? `NewsMonkey - Top ${this.capitalizeFirstLetter(category)} Headlines` : 'NewsMonkey - Top headlines' }</h2>
+                </div>
                 {loader && <Spinner />}
                 <InfiniteScroll
                     dataLength={articles.length}
