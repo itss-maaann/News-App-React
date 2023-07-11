@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navbar from './components/NewsNavBar';
+import News from './components/News';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  pageSize = 9;
+  apiKey = '0f176a171aef4983893d919d30976af1';
+  categories = [
+    {key : '', country : 'us'},
+    {key :'general', country : 'us'},
+    {key :'business', country : 'us'},
+    {key :'entertainment', country : 'us'},
+    {key :'health', country : 'us'},
+    {key :'science', country : 'us'},
+    {key :'sports', country : 'us'},
+    {key :'technology', country : 'us'},
+  ];
+
+  render() {
+    console.log("App component");
+    return (
+      <>
+        <Router>
+          <Navbar />
+          <Routes>
+            {this.categories.map((category) => (
+              <Route
+                path={`/${category.key}`}
+                element={<News key={category.key} pageSize={this.pageSize} country={category.country} category={category.key} apiKey={this.apiKey} />}
+              />
+            ))}
+          </Routes>
+        </Router>
+      </>
+    );
+  }
 }
-
-export default App;
