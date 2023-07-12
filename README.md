@@ -13,7 +13,7 @@ Stay up to date with the latest news in various categories with the News App. Th
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/news-app.git
+   git clone https://github.com/itss-maaann/news-app.git
 
 2. Navigate to the project directory:
     cd news-app
