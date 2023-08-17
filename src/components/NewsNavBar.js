@@ -39,10 +39,6 @@ export class Navbar extends Component {
                                     <NavLink to="/technology" className={({ isActive, isPending }) => `nav-link ${isPending ? "pending" : isActive ? "active" : ""}`}>Technology</NavLink>
                                 </li>
                             </ul>
-                            {/* <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-warning" type="submit">Search</button>
-                            </form> */}
                         </div>
                     </div>
                 </nav>

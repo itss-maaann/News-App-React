@@ -29,6 +29,7 @@ Stay up to date with the latest news in various categories with the News App. Th
 ## API Key
 
 The News App utilizes the [NewsAPI](https://newsapi.org/) to fetch news articles. To use the application, you need to obtain an API key from NewsAPI and replace the placeholder API key in the code.
+Once you have acquired your API key, you can assign it to the apiKey variable by replacing "process.env.REACT_APP_NEWS_API_KEY" in App.js. Alternatively, you can opt to create a .env.local file, defining a personalized variable such as "REACT_APP_NEWS_API_KEY", and then assigning your API key to this designated variable.
 
 
 Contributing
