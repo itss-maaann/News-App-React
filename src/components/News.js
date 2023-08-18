@@ -93,7 +93,7 @@ class News extends Component {
 
         return (
             <div className="container mt-3">
-                <h2 className="text-center">{category !== '' ? `NewsMonkey - Top ${this.capitalizeFirstLetter(category)} Headlines` : 'NewsMonkey - Top headlines' }</h2>
+                <h2 className="text-center" style={{marginTop: "80px"}}>{category !== '' ? `NewsMonkey - Top ${this.capitalizeFirstLetter(category)} Headlines` : 'NewsMonkey - Top headlines' }</h2>
                 {loader && <Spinner />}
                 <InfiniteScroll
                     dataLength={articles.length}
@@ -102,18 +102,17 @@ class News extends Component {
                     loader={<Spinner />}
                 >
                     <div className="container my-3">
-                        <div className="row">
+                        <div className="row row-cols-1 row-cols-md-3 g-3">
                             {articles.map((article, index) => (
-                                <div className="col-md-4" key={index}>
+                                <div className="col-md-3" key={index}>
                                     {!loader && <NewsItem
                                         title={article.title ? (article.title.length > 45 ? `${article.title.slice(0, 45)}...` : article.title) : ''}
                                         description={article.description ? (article.description.length > 88 ? `${article.description.slice(0, 88)}...` : article.description) : ''}
                                         author={article.author ? article.author : 'Unknown'}
-                                        source={article.source.name}
+                                        source={article.source.Name}
                                         imageUrl={article.urlToImage}
                                         newsUrl={article.url}
                                         date={article.publishedAt}
-                                        index={index}
                                     />}
                                 </div>
                             ))}
